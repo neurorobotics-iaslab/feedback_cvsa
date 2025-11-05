@@ -36,6 +36,7 @@ add_service_files(
 add_message_files(
   FILES
     Trials_to_keep.msg
+    AudioMessage.msg
 )
 
 generate_messages(

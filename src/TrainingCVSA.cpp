@@ -492,7 +492,7 @@ void TrainingCVSA::bci_protocol(void){
             }
             this->openAudioDevice();
             this->setAudio(idx_sampleAudio, sampleAudio, bufferAudioSize, n_sampleAudio);
-            while(idx_sampleAudio + n_sampleAudio <= this->buffer_audio_full_.size()){
+            while(idx_sampleAudio + n_sampleAudio <= this->buffer_audio_full_.size()){       
                 this->fillAudioBuffer(idx_sampleAudio, n_sampleAudio, true);
                 ao_play(this->device_audio_, reinterpret_cast<char*>(this->buffer_audio_played_.data()), bufferAudioSize * sizeof(short));
             }
