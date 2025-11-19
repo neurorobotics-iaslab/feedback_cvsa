@@ -5,8 +5,8 @@ namespace feedback {
 
 TrainingCVSA::TrainingCVSA(void) : CVSA_layout("trainingCVSA"), p_nh_("~") {
 
-    this->pub_ = this->nh_.advertise<rosneuro_msgs::NeuroEvent>("events/bus", 1);
-    this->sub_ = this->nh_.subscribe("cvsa/neuroprediction/integrated", 1, &TrainingCVSA::on_received_data, this);
+    this->pub_ = this->nh_.advertise<rosneuro_msgs::NeuroEvent>("/events/bus", 1);
+    this->sub_ = this->nh_.subscribe("/cvsa/neuroprediction/integrated", 1, &TrainingCVSA::on_received_data, this);
 }
 
 TrainingCVSA::~TrainingCVSA(void) {}
