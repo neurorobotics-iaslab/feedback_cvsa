@@ -73,11 +73,8 @@ include_directories(include
 
 add_library(${PROJECT_NAME}    
             src/CVSA_layout.cpp
-            src/CVSA_layout_visual.cpp
             src/TrainingCVSA.cpp
-            src/ControlCVSA.cpp
             src/TrialSequence.cpp
-            src/TrainingCVSA_visual.cpp
             src/Autopilot.cpp
             )
 
@@ -105,16 +102,3 @@ target_link_libraries(trainingCVSA_node  ${PROJECT_NAME}
                                     ${SNDFILE_LIBRARY}
                                     ${AO_LIBRARY}
                                     )
-add_executable(controlCVSA_node src/controlCVSA_node.cpp)
-target_link_libraries(controlCVSA_node ${PROJECT_NAME}
-                                   ${catkin_LIBRARIES}
-                                   ${NEURODRAW_LIBRARIES}
-                                   ${NEUROCHRONO_LIBRARIES}
-                                   )
-
-add_executable(trainingCVSA_visual_node src/trainingCVSA_visual_node.cpp)
-target_link_libraries(trainingCVSA_visual_node ${PROJECT_NAME}
-                                   ${catkin_LIBRARIES}
-                                   ${NEURODRAW_LIBRARIES}
-                                   ${NEUROCHRONO_LIBRARIES}
-                                   )
